@@ -6,8 +6,38 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
-if status is-interactive # Commands to run in interactive sessions can go here
+function user_defined --description 'User defined functions and aliases'
+    # Aliases
+    alias pamcan pacman
+    alias ls 'eza --icons'
+    alias clear "printf '\033[2J\033[3J\033[1;1H'"
+    alias q 'qs -c ii'
+    
+    # env
+    set EDITOR '/usr/sbin/nvim'
+    set HYPRPATH '~/.config/hypr'
 
+    # Alias
+    alias fishcfg '$EDITOR ~/.config/fish/config.fish'
+    alias hyprcfg '$EDITOR $HYPRPATH'
+    alias i 'paru -S'
+    alias u 'paru'
+    alias v '$EDITOR'
+    alias yz 'yazi'
+    alias df 'dysk'
+    alias reload 'clear && exec fish'
+    alias switchwall '~/.config/quickshell/ii/scripts/colors/switchwall.sh'
+
+    # Print
+    fastfetch
+    df
+    cat ~/.config/fish/lecture.txt
+
+    # pay respects
+    pay-respects fish --alias | source
+end
+
+if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
 
@@ -17,29 +47,5 @@ if status is-interactive # Commands to run in interactive sessions can go here
         cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     end
 
-    # Aliases
-    alias pamcan pacman
-    alias ls 'eza --icons'
-    alias clear "printf '\033[2J\033[3J\033[1;1H'"
-    alias q 'qs -c ii'
-    
+    user_defined
 end
-
-# env
-set EDITOR '/usr/sbin/nvim'
-set HYPRPATH '~/.config/hypr'
-
-# Alias
-alias fishcfg '$EDITOR ~/.config/fish/config.fish'
-alias hyprcfg '$EDITOR $HYPRPATH'
-alias i 'paru -S'
-alias u 'paru -Syu'
-alias v '$EDITOR'
-alias yz 'yazi'
-alias df 'dysk'
-alias reload 'exec fish'
-
-# Print
-fastfetch
-df
-cat ~/.config/fish/lecture.txt
