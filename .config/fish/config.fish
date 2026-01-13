@@ -6,8 +6,17 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
-function user_defined --description 'User defined functions and aliases'
-    # Aliases
+if status is-interactive # Commands to run in interactive sessions can go here
+    # No greeting
+    set fish_greeting
+
+    # Use starship
+    starship init fish | source
+    if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+        cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+    end
+
+        # Aliases
     alias pamcan pacman
     alias ls 'eza --icons'
     alias clear "printf '\033[2J\033[3J\033[1;1H'"
@@ -35,17 +44,4 @@ function user_defined --description 'User defined functions and aliases'
 
     # pay respects
     pay-respects fish --alias | source
-end
-
-if status is-interactive # Commands to run in interactive sessions can go here
-    # No greeting
-    set fish_greeting
-
-    # Use starship
-    starship init fish | source
-    if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-    end
-
-    user_defined
 end
