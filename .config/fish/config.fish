@@ -39,8 +39,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
     # Print
     fastfetch
-    df
-    cat ~/.config/fish/lecture.txt
 
     # pay respects
     pay-respects fish --alias | source
