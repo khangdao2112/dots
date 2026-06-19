@@ -5,7 +5,7 @@ dmenu() {
     case $choice in
         "Power Off") systemctl poweroff ;;
         "Reboot") systemctl reboot ;;
-        "Logout") hyprctl dispatch exit ;;
+	"Logout") hyprctl dispatch 'hl.dsp.exit()' ;;
         "Sleep") systemctl suspend || loginctl suspend;;
         "Lock") loginctl lock-session ;;
         "Reboot to UEFI") systemctl reboot --firmware-setup ;;

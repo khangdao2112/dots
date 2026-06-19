@@ -1,0 +1,57 @@
+-- This file will not be overwritten across dots-hyprland updates.
+-- The file name is for the sake of organization and does not matter
+-- See the corresponding files in ~/.config/hypr/hyprland for examples
+
+hl.config({
+    debug = {
+        disable_logs = false
+    },
+
+    cursor = {
+        no_hardware_cursors = false
+    },
+
+    input = {
+        sensitivity = 0.1,
+        accel_profile = "flat",
+        touchpad = {
+            scroll_factor = 0.2,
+            clickfinger_behavior = false
+        }
+    },
+
+    decoration = {
+        rounding = 18,
+        blur = {
+            enabled = true,
+            xray = false,
+            new_optimizations = true,
+            size = 3,
+            passes = 2,
+            brightness = 1,
+            noise = 0,
+            contrast = 2,
+            vibrancy = 0,
+            vibrancy_darkness = 0,
+            popups = false,
+            popups_ignorealpha = 0.6,
+            input_methods = true,
+            input_methods_ignorealpha = 0.8,
+            special = false
+        }
+    },
+
+    misc = {
+        middle_click_paste = false,
+    },
+
+    render = {
+        direct_scanout = true
+    }
+})
+
+-- Per-device config
+hl.device({
+    name = "syna2ba6:00-06cb:ce78-touchpad",
+    sensitivity = 0.4
+})
