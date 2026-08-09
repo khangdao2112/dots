@@ -11,7 +11,7 @@
 !.gitignore
 !README.md
 !niri/config.kdl
-*/niri/config.d
+niri/config.d/
 !70-binds.kdl
 !90-user-extra.kdl
 
