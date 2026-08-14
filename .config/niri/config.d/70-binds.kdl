@@ -52,7 +52,7 @@ binds {
     Mod+Shift+X { spawn "/home/khangdao/.local/bin/inir" "region" "ocr"; }
     Mod+Shift+A { spawn "/home/khangdao/.local/bin/inir" "region" "search"; }
     // Unified snip menu (pick action/scope from the in-overlay toolbar).
-    Ctrl+Shift+S { spawn "/home/khangdao/.local/bin/inir" "region" "menu"; }
+    // Ctrl+Shift+S { spawn "/home/khangdao/.local/bin/inir" "region" "menu"; }
 
     // Wallpaper picker, settings, cheatsheet, panel family switch.
     Ctrl+Alt+T { spawn "/home/khangdao/.local/bin/inir" "wallpaperSelector" "toggle"; }
@@ -270,6 +270,8 @@ binds {
     Mod+Shift+Ctrl+Home { spawn-sh "/home/khangdao/dots/userscripts/legion-hybrid-switch.sh"; }
     Mod+Shift+Ctrl+Delete { spawn-sh "/home/khangdao/dots/userscripts/power.sh"; }
     Mod+Period { spawn-sh "BEMOJI_PICKER_CMD='rofi -dmenu' bemoji -t -n -c"; }
+    Ctrl+Shift+Print { screenshot-screen; }
+
 
 
 
