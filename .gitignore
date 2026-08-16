@@ -1,2 +1,20 @@
+# Explicit declaration
+*
+!fastfetch
+!fish/config.fish
+!fuzzel.ini
+!kitty.conf
+!rofi/config.rasi
+!rofi/themes
+!userscripts
+
+!.gitignore
+!README.md
+!niri/config.kdl
+niri/config.d/
+!70-binds.kdl
+!90-user-extra.kdl
+
+# Old .gitignore
 */hypr/custom/scripts/
 */hypr/hyprland/
