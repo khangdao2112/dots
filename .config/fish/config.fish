@@ -3,8 +3,11 @@ if status is-interactive
     # No greeting
     set fish_greeting
 
-    # Print
-    fastfetch
+    # env
+    set -gx PF_INFO "os kernel uptime"
+
+    # print
+    pfetch
 
     # Use starship prompt
     if command -v starship &>/dev/null
