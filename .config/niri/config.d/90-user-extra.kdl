@@ -69,7 +69,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^md.Obsidian$" title="^Setting"
+    match app-id="^md.obsidian.Obsidian$" title="^Setting"
 
     open-floating true
 }
@@ -105,4 +105,8 @@ layout {
         top 0
         bottom 0
     }
+}
+
+clipboard {
+    disable-primary
 }
